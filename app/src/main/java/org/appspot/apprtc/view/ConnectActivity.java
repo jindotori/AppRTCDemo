@@ -8,7 +8,7 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-package org.appspot.apprtc;
+package org.appspot.apprtc.view;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -40,6 +40,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Random;
+
+import org.appspot.apprtc.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 

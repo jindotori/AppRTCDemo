@@ -8,7 +8,7 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-package org.appspot.apprtc;
+package org.appspot.apprtc.view;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -19,6 +19,8 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import org.appspot.apprtc.peerconnection.PeerConnectionClient;
+import org.appspot.apprtc.R;
 import org.webrtc.StatsReport;
 
 import java.util.HashMap;

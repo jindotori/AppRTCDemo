@@ -8,7 +8,7 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-package org.appspot.apprtc;
+package org.appspot.apprtc.view;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -37,12 +37,20 @@ import java.lang.RuntimeException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import org.appspot.apprtc.AppRTCAudioManager.AudioDevice;
-import org.appspot.apprtc.AppRTCAudioManager.AudioManagerEvents;
-import org.appspot.apprtc.AppRTCClient.RoomConnectionParameters;
-import org.appspot.apprtc.AppRTCClient.SignalingParameters;
-import org.appspot.apprtc.PeerConnectionClient.DataChannelParameters;
-import org.appspot.apprtc.PeerConnectionClient.PeerConnectionParameters;
+
+import org.appspot.apprtc.device.AppRTCAudioManager;
+import org.appspot.apprtc.device.AppRTCAudioManager.AudioDevice;
+import org.appspot.apprtc.device.AppRTCAudioManager.AudioManagerEvents;
+import org.appspot.apprtc.rtc.AppRTCClient;
+import org.appspot.apprtc.rtc.AppRTCClient.RoomConnectionParameters;
+import org.appspot.apprtc.rtc.AppRTCClient.SignalingParameters;
+import org.appspot.apprtc.rtc.DirectRTCClient;
+import org.appspot.apprtc.peerconnection.PeerConnectionClient;
+import org.appspot.apprtc.peerconnection.PeerConnectionClient.DataChannelParameters;
+import org.appspot.apprtc.peerconnection.PeerConnectionClient.PeerConnectionParameters;
+import org.appspot.apprtc.R;
+import org.appspot.apprtc.util.UnhandledExceptionHandler;
+import org.appspot.apprtc.rtc.WebSocketRTCClient;
 import org.webrtc.Camera1Enumerator;
 import org.webrtc.Camera2Enumerator;
 import org.webrtc.CameraEnumerator;
@@ -66,7 +74,7 @@ import org.webrtc.VideoSink;
  * and call view.
  */
 public class CallActivity extends Activity implements AppRTCClient.SignalingEvents,
-                                                      PeerConnectionClient.PeerConnectionEvents,
+        PeerConnectionClient.PeerConnectionEvents,
                                                       CallFragment.OnCallEvents {
   private static final String TAG = "CallRTCClient";
 
