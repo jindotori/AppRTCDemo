@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * AppRTCClient is the interface representing an AppRTC client.
  */
-public interface AppRTCClient {
+public interface AppRTCClient { 
   /**
    * Struct holding the connection parameters of an AppRTC room.
    */
